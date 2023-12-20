@@ -27,17 +27,18 @@ const Table = () => {
             </tr>
           </thead>
           <tbody className=" [&>*:nth-child(odd)]:bg-gray-300 [&>*:nth-child(even)]:bg-white">
-            {tableData?.map((item, id) => (
-              <tr key={id}>
-                <td className="py-3 px-4 text-left font-medium text-gray-600 border">
-                  {item.no}
-                </td>
-                <td className="py-3 px-4 text-left border">{item.name}</td>
-                <td className="py-3 px-4 text-left border">{item.title}</td>
-                <td className="py-3 px-4 text-left border">{item.status}</td>
-                <td className="py-3 px-4 text-left border">{item.role}</td>
-              </tr>
-            ))}
+            {tableData?.length &&
+              tableData?.map((item, id) => (
+                <tr key={id}>
+                  <td className="py-3 px-4 text-left font-medium text-gray-600 border">
+                    {item.no}
+                  </td>
+                  <td className="py-3 px-4 text-left border">{item.name}</td>
+                  <td className="py-3 px-4 text-left border">{item.title}</td>
+                  <td className="py-3 px-4 text-left border">{item.status}</td>
+                  <td className="py-3 px-4 text-left border">{item.role}</td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>

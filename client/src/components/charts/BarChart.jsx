@@ -5,7 +5,6 @@ import { Chart as ChartJS } from "chart.js/auto";
 
 const BarChart = () => {
   const barData = useFetchData("/api/barchart");
-
   let userData = {
     labels: barData?.map((item) => item.x),
     datasets: [
@@ -34,7 +33,7 @@ const BarChart = () => {
   };
   return (
     <div className="bg-white h-[410px] shadows p-4 rounded-[15px] w-full flex justify-center items-center">
-      <Bar data={userData} />
+      {barData?.length && <Bar data={userData} />}
     </div>
   );
 };
