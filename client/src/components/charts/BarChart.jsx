@@ -33,7 +33,7 @@ const BarChart = () => {
   };
   return (
     <div className="bg-white h-[410px] shadows p-4 rounded-[15px] w-full flex justify-center items-center">
-      {barData?.length && <Bar data={userData} />}
+      {barData?.length ? <Bar data={userData} /> : null}
     </div>
   );
 };
